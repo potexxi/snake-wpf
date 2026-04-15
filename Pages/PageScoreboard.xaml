@@ -9,29 +9,53 @@
       Title="PageScoreboard">
 
     <Grid Background="#0A0F2C">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="Background" Value="#050A1A"/>
+                <Setter Property="BorderBrush" Value="#4FC3FF"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="240"/>
+                <Setter Property="Margin" Value="0,8"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="#4FC3FF" BlurRadius="15"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#0D1A3A"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
 
         <!--CHATGPT Anfang, genau gleich wie bei den andern Pages mit dem Design + Datagrid von ihm, also nur das Design-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-         <!--CHATGPT ende-->
+        <!--CHATGPT ende-->
         <TextBlock Text="SCOREBOARD" Foreground="#4FC3FF" FontSize="40" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center" Margin="0,20,0,10">
             <TextBlock.Effect>
                 <DropShadowEffect Color="#4FC3FF" BlurRadius="20"/>
             </TextBlock.Effect>
         </TextBlock>
         <!-- CHATGPT Anfang -->
-        <DataGrid x:Name="DataGridScoreboard" Grid.Row="1"
+        <DataGrid x:Name="DataGridScoreboard" FontSize="16"
               ItemsSource="{Binding ScoreList}"
               AutoGenerateColumns="False"
               Background="#050A1A"
-              Foreground="#4FC3FF"
+              Foreground="#050A1A"
               BorderBrush="#4FC3FF"
-              BorderThickness="2"
+              BorderThickness="2.5"
               FontFamily="Consolas"
               HeadersVisibility="Column"
-              IsReadOnly="True">
+              IsReadOnly="True" Margin="11,78,11,74" Grid.RowSpan="2">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="RANK" Binding="{Binding Rank}" Width="80"/>
@@ -41,6 +65,6 @@
 
         </DataGrid>
         <!--CHATGPT ende-->
-
+        <Button x:Name="ButtonBack" Content="> Back to menu" Margin="0,270,0,0" Width="200" Height="40" Grid.Row="1" Click="ButtonBack_Click"/>
     </Grid>
 </Page>

@@ -52,7 +52,11 @@ namespace Snake.Pages
          
         public void SetUserScore(int score)
         {
-            List<DataEntry> list = ReadEntries();
+            List<DataEntry> list = new List<DataEntry>();
+            if (File.Exists("scoreboard.snake"))
+            {
+                list = ReadEntries();
+            }
             bool inList = false;
             foreach(DataEntry entry in list)
             {
@@ -66,15 +70,24 @@ namespace Snake.Pages
             {
                 list.Add(new DataEntry(score, MainWindow.username, 0));
             }
+            var jsonoptions = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+            };
             using(StreamWriter writer = new StreamWriter("scoreboard.snake"))
             {
-                writer.Write(JsonSerializer.Serialize(DataEntry.Sort(list)));
+                writer.Write(JsonSerializer.Serialize(DataEntry.Sort(list), jsonoptions));
             }
         }
 
         public void SetDataGrid()
         {
             DataGridScoreboard.ItemsSource = ReadEntries();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.frame.Navigate(MainWindow.pages["menu"]);
         }
     }
 }

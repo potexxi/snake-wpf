@@ -27,9 +27,12 @@ namespace Snake.Pages
 
         private void ButtonConfirm_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.username = TextBoxUsername.Text;
-            MainWindow.frame.Navigate(MainWindow.pages["menu"]);
-            SnakeLogger.logger.Information($"Username entered: \"{MainWindow.username}\"");
+            if(TextBoxUsername.Text != "")
+            {
+                MainWindow.username = TextBoxUsername.Text;
+                MainWindow.frame.Navigate(MainWindow.pages["menu"]);
+                SnakeLogger.logger.Information($"Username entered: \"{MainWindow.username}\"");
+            }
         }
     }
 }

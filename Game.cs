@@ -100,10 +100,14 @@ namespace Snake
 
         public void SaveToJson()
         {
+            var jsonoptions = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+            };
             SaveData between = new SaveData(PlayerSnake.bodySegments, MainWindow.game.snake.direction, MainWindow.game.snake.isAlive, MainWindow.game.snake.score);
             using(StreamWriter writer = new StreamWriter($"savegame-{MainWindow.username}.snake"))
             {
-                writer.Write(JsonSerializer.Serialize(between));
+                writer.Write(JsonSerializer.Serialize(between, jsonoptions));
             }
         }
 
