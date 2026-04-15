@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Snake.UserControlls.UCSnakeHead"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Snake.UserControlls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50">
+    <Grid x:Name="GridMain">
+        <Grid.RenderTransform>
+            <RotateTransform x:Name="RotateTransformSnake" Angle="0" CenterX="25" CenterY="25"/>
+        </Grid.RenderTransform>
+        <Rectangle Width="50" Height="50" Fill="#FF8DF1A9"></Rectangle>
+        <Border BorderThickness="2" BorderBrush="#FF4D7B5A"></Border>
+        <Rectangle Stroke="#FF4D7B5A" StrokeThickness="2" Margin="36,7,6,8"/>
+        <Ellipse HorizontalAlignment="Left" Height="10" Margin="18,8,0,0" Stroke="Red" Fill="Red" VerticalAlignment="Top" Width="10"/>
+        <Ellipse HorizontalAlignment="Left" Height="10" Margin="18,30,0,0" Stroke="Red" Fill="Red" VerticalAlignment="Top" Width="10"/>
+    </Grid>
+</UserControl>

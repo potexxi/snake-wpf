@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Snake.UserControlls.FieldTile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Snake.UserControlls"
+             xmlns:uc="clr-namespace:Snake.UserControlls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50">
+    <Canvas>
+        <Grid>
+            <Rectangle Width="50" Height="50" Fill="#FF2B3B4A"></Rectangle>
+            <Border BorderThickness="2" BorderBrush="#FF8D8D8D"></Border>
+        </Grid>
+    </Canvas>
+</UserControl>

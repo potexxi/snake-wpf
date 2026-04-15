@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Snake.UserControlls.PauseMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Snake.UserControlls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="-10,-34,0,0">
+        <!--Das gleiche wie im Menu.xaml-->
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="Background" Value="#050A1A"/>
+                <Setter Property="BorderBrush" Value="#4FC3FF"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="240"/>
+                <Setter Property="Margin" Value="0,8"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="#4FC3FF" BlurRadius="15"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#0D1A3A"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Rectangle x:Name="RectBackground" Margin="0,0,0,0" Opacity="0.3" Fill="#FFB4B4B4" Width="800" Height="450"></Rectangle>
+        <Rectangle Fill="#0A0F2C" Width="200" Height="200" RadiusX="10" RadiusY="10" Canvas.Left="96" Canvas.Top="42"></Rectangle>
+        <Button x:Name="ButtonMenu" Cursor="Hand" Width="120" Height="40" Content="Back to menu" Canvas.Left="58" FontSize="15" Canvas.Top="42" Margin="0,-90,0,0" Click="ButtonMenu_Click"/>
+        <Button x:Name="ButtonSave" Cursor="Hand"  Width="120" Height="40" Content="Save game" Canvas.Left="58" FontSize="15" Canvas.Top="42" Margin="0,0,0,0" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonContinue" Cursor="Hand"  Width="120" Height="40" Content="Continue" FontSize="15" Margin="0,90,0,0" Click="ButtonContinue_Click"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,75 @@
+﻿<Page x:Class="Snake.Pages.PageUserName"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Snake.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="PageUserName">
+
+    <Grid Background="#0A0F2C">
+
+        <!--CHATGPT Anfang, wie bei den anderen Pages-->
+        <!-- Style (identisch zu deiner Menu-Page erweitert für TextBox) -->
+        <Grid.Resources>
+
+            <!-- Button Style -->
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="Background" Value="#050A1A"/>
+                <Setter Property="BorderBrush" Value="#4FC3FF"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="240"/>
+                <Setter Property="Margin" Value="0,8"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="#4FC3FF" BlurRadius="15"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#0D1A3A"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- TextBox Style -->
+            <Style TargetType="TextBox">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="Background" Value="#050A1A"/>
+                <Setter Property="BorderBrush" Value="#4FC3FF"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="240"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0,8"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="#4FC3FF" BlurRadius="15"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <!--CHATGPT Ende-->
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,-30,0,0">
+            <TextBlock Margin="0,0,0,0" Text="ENTER USERNAME" Foreground="#4FC3FF" FontSize="45" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#4FC3FF" BlurRadius="25"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBox MaxLength="20" Margin="0,30,0,0" x:Name="TextBoxUsername" Text=""/>
+            <Button x:Name="ButtonConfirm" Margin="0,20,0,0" Content="> CONFIRM" Click="ButtonConfirm_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

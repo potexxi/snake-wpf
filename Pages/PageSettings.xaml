@@ -1,0 +1,90 @@
+﻿<Page x:Class="Snake.Pages.PageSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="PageSettings"
+      Width="600" Height="450">
+
+    <Grid Background="#0A0F2C">
+        <!--ChatGPT anfang:
+        Prompt: mache mir dieses settings: <code vom vorherigen settings> genau im gleichen style, wie das page menu,
+        gebe mir nur die grid resources zeilen-->
+        <Grid.Resources>
+
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="Background" Value="#050A1A"/>
+                <Setter Property="BorderBrush" Value="#4FC3FF"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="240"/>
+                <Setter Property="Margin" Value="0,8"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="#4FC3FF" BlurRadius="15"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#0D1A3A"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            <Style TargetType="Slider">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="Margin" Value="10,0"/>
+            </Style>
+
+            <Style TargetType="RadioButton">
+                <Setter Property="Foreground" Value="#4FC3FF"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Margin" Value="0,2"/>
+            </Style>
+
+        </Grid.Resources>
+        <!--ChatGPT ende-->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Margin="0,0,0,0" Text="SETTINGS" Foreground="#4FC3FF" FontSize="50" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#4FC3FF" BlurRadius="25"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                <Label Content="SPEED:" Width="120"/>
+                <Slider x:Name="SliderSpeed" Width="200" Minimum="-500" Height="20" Maximum="-100" ValueChanged="SliderSpeed_ValueChanged"/>
+                <Label x:Name="LabelSpeed" Content="500" Width="60"/>
+            </StackPanel>
+            <TextBlock Text="HIGHER = SLOWER" Foreground="#4FC3FF" Width="390" FontSize="12" FontFamily="Consolas" HorizontalAlignment="Center" Margin="0,-5,0,5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="WIDTH:" Width="120"/>
+                <Slider x:Name="SliderFieldWidth" Width="200" Minimum="4" Height="20" Maximum="15" ValueChanged="SliderFieldWidth_ValueChanged"/>
+                <Label x:Name="LabelWidth" Content="4" Width="60"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="HEIGHT:" Width="120"/>
+                <Slider x:Name="SliderFieldHeight" Width="200" Minimum="4" Height="20" Maximum="13" ValueChanged="SliderFieldHeight_ValueChanged"/>
+                <Label x:Name="LabelHeight" Content="4" Width="60"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Label Content="MODE:" Width="160" Margin="-220,0,0,0"/>
+                <StackPanel Margin="-60,0,0,0">
+                    <RadioButton x:Name="RadioButtonEasy" Content="EASY" IsChecked="True" GroupName="Starter"/>
+                    <RadioButton x:Name="RadioButtonMedium" Content="MEDIUM" GroupName="Starter"/>
+                    <RadioButton x:Name="RadioButtonExtreme" Content="EXTREME" GroupName="Starter"/>
+                </StackPanel>
+            </StackPanel>
+            <Button Content="> APPLY" x:Name="ButtonApply" Click="ButtonApply_Click" Margin="0,15,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

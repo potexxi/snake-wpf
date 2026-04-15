@@ -1,0 +1,46 @@
+﻿<Page x:Class="Snake.Pages.PageScoreboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Snake.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="PageScoreboard">
+
+    <Grid Background="#0A0F2C">
+
+        <!--CHATGPT Anfang, genau gleich wie bei den andern Pages mit dem Design + Datagrid von ihm, also nur das Design-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+         <!--CHATGPT ende-->
+        <TextBlock Text="SCOREBOARD" Foreground="#4FC3FF" FontSize="40" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center" Margin="0,20,0,10">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="#4FC3FF" BlurRadius="20"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <!-- CHATGPT Anfang -->
+        <DataGrid x:Name="DataGridScoreboard" Grid.Row="1"
+              ItemsSource="{Binding ScoreList}"
+              AutoGenerateColumns="False"
+              Background="#050A1A"
+              Foreground="#4FC3FF"
+              BorderBrush="#4FC3FF"
+              BorderThickness="2"
+              FontFamily="Consolas"
+              HeadersVisibility="Column"
+              IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="RANK" Binding="{Binding Rank}" Width="80"/>
+                <DataGridTextColumn Header="USERNAME" Binding="{Binding Username}" Width="*"/>
+                <DataGridTextColumn Header="SCORE" Binding="{Binding Score}" Width="120"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <!--CHATGPT ende-->
+
+    </Grid>
+</Page>
