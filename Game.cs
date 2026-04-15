@@ -142,6 +142,10 @@ namespace Snake
             {
                 UCPlayerSnake.CanvasSnake.Children.Add(coc);
             }
+            foreach(Food coco in food)
+            {
+                coco.Respawn();
+            }
             PageGame.field.SetSegment(MainWindow.game.snake.direction);
         }
     }
