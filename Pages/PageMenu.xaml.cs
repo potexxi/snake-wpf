@@ -84,5 +84,22 @@ namespace Snake.Pages
             SnakeLogger.logger.Debug("Open settings.");
             MainWindow.frame.Navigate(MainWindow.pages["settings"]);
         }
+
+        private void Label_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.frame.Navigate(MainWindow.pages["info"]);
+        }
+
+        private void Label_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Foreground = (Brush)new BrushConverter().ConvertFromString("#4FC3FF");
+        }
+
+        private void Label_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Foreground = Brushes.White;
+        }
     }
 }

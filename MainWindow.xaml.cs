@@ -34,6 +34,7 @@ namespace Snake
             pages.Add("settings", new Pages.PageSettings());
             pages.Add("username", new Pages.PageUserName());
             pages.Add("scoreboard", new Pages.PageScoreboard());
+            pages.Add("info", new Pages.PageInfo());
             MainFrame.Navigate(pages["username"]);
         }
 

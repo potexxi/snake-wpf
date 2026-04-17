@@ -27,10 +27,13 @@
         </Grid.Resources>
         <!--ChatGPT ende-->
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,-30,0,0">
-            <TextBlock Text="SNAKE" Foreground="#4FC3FF" FontSize="65" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center">
-                <TextBlock.Effect>
-                    <DropShadowEffect Color="#4FC3FF" BlurRadius="25"/>
-                </TextBlock.Effect></TextBlock>
+            <StackPanel Orientation="Horizontal" Width="600">
+                <TextBlock Margin="198,0,0,0" Text="SNAKE" Foreground="#4FC3FF" FontSize="65" FontFamily="Bahnschrift SemiBold" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="#4FC3FF" BlurRadius="25"/>
+                    </TextBlock.Effect></TextBlock>
+                <Label Cursor="Hand" PreviewMouseDown="Label_PreviewMouseDown" MouseLeave="Label_MouseLeave" MouseEnter="Label_MouseEnter" Margin="120,0,0,0" Content="🛈" FontSize="45" Foreground="White"></Label>
+            </StackPanel>
             <TextBlock Text="by Potexxi" Foreground="#4FC3FF" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Center" Margin="0,-5,0,20"/>
             <Button x:Name="ButtonPlayNew" Content="> NEW GAME" Click="ButtonPlayNew_Click"/>
             <Button x:Name="ButtonPlaySaved" Content="> CONTINUE" Click="ButtonPlaySaved_Click"/>
